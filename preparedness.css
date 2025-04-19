@@ -1,0 +1,170 @@
+:root {
+    --red: #E63946;
+    --orange: #F4A261;
+    --green: #2A9D8F;
+    --blue: #457B9D;
+    --dark: #264653;
+    --light: #F8F9FA;
+    --white: #ffffff;
+    --gray: #e0e0e0;
+  }
+  
+  /* ✅ Base Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: rgb(0, 109, 128);
+    color: var(--dark);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-color: rgb(32, 168, 226); /* Soft light blue-gray */
+  }
+  
+  /* 🌐 Navbar */
+  .navbar {
+    background-color: var(--dark);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    flex-wrap: wrap;
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+  }
+  
+  .nav-links li a.active {
+    background-color: var(--orange);
+    color: var(--white);
+    font-weight: bold;
+  }
+  
+  .nav-links li a:hover {
+    color: var(--green);
+  }
+  
+  .preparedness-section {
+    padding: 3rem 2rem;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.2s ease-in;
+  }
+  
+  h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #003566;
+  }
+  
+  form label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-weight: bold;
+  }
+  
+  input,
+  select {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .checkbox-group label {
+    display: block;
+    margin-top: 0.5rem;
+  }
+  
+  button {
+    margin-top: 2rem;
+    padding: 0.8rem 1.5rem;
+    background: #003566;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #001d3d;
+  }
+  
+  #resultBox {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #e0f7fa;
+    border-left: 5px solid #0077b6;
+    border-radius: 8px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @keyframes fadeIn {
+    0% {opacity: 0; transform: translateY(10px);}
+    100% {opacity: 1; transform: translateY(0);}
+  }
+  
+  .subheading {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+  }
+  
+  .iframe-container {
+    width: 100%;
+    height: 720px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    animation: fadeIn 1.5s ease;
+  }
+  
+  .iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  

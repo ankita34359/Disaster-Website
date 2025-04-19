@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | ResQNow</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body class="auth-page">
+  <nav class="navbar">
+    <div class="logo">🛟 ResQNow</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="mitigation.html">Mitigation</a></li>
+      <li><a href="preparedness.html">Preparedness</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="login.html" class="active">Login</a></li>
+    </ul>
+  </nav>
+
+  <div class="form-container">
+    <h2>🔐 Login</h2>
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="Email ID" required>
+      <input type="password" id="login-pass" placeholder="Password" required>
+
+      <div class="show-password">
+        <label><input type="checkbox" onclick="toggleLoginPassword()"> Show Password</label>
+      </div>
+
+      <button type="submit">Login</button>
+      <p class="switch-link">Don't have an account? <a href="signup.html">Sign up</a></p>
+    </form>
+    <p id="login-msg"></p>
+  </div>
+
+  <script>
+    function toggleLoginPassword() {
+      const pass = document.getElementById("login-pass");
+      pass.type = pass.type === "password" ? "text" : "password";
+    }
+
+    document.getElementById("login-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const enteredEmail = document.getElementById("login-email").value.trim();
+      const enteredPass = document.getElementById("login-pass").value;
+      const msg = document.getElementById("login-msg");
+
+      const storedEmail = localStorage.getItem("userEmail");
+      const storedPass = localStorage.getItem("userPass");
+
+      if (enteredEmail === storedEmail && enteredPass === storedPass) {
+        msg.textContent = "✅ Login successful! Redirecting...";
+        msg.style.color = "green";
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1500);
+      } else {
+        msg.textContent = "❌ Invalid email or password.";
+        msg.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
